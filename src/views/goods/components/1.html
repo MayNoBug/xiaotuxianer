@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //合并对象
+    const part1 = { id: 10, name: 'Howard Moon' }
+    const part2 = { id: 11, password: 'Password!' }
+    const user1 = { ...part1, ...part2 }
+    console.log(user1);
+    //向对象添加属性
+    const user = { id: 10, name: 'Tom' }
+    const userWithPass = { ...user, password: 'Password!' }
+    console.log(userWithPass);
+    //解构对象的值
+    const gemstone = {
+      type: 'quartz',
+      color: 'rose',
+      karat: 21.29,
+      aa: 123
+    };
+    const { type, color, karat } = gemstone;
+    const { aa } = gemstone
+    console.log(type, color, karat);
+    console.log(aa);
+    const books = ["Don Quixote", "The Hobbit", "Alice in Wonderland", "Tale of Two Cities"];
+    console.log(...books);
+    //数组方法--push
+    const a = [1, 2, 3, 4, 5]
+    const b = a.push(40)
+    console.log(a);
+    console.log(b);
+    //数组方法--splice
+    const arr = [1, 2, 3, 4, 5, 6]
+    const arr1 = arr.splice(2, 3, [959])
+    console.log(arr); //arr=[1,2,[959],6]
+    console.log(arr1);//[3,4,5]
+    //push  后面添加  返回新数组长度
+    //pop    后面减少  返回减少的元素
+    //unshift  前面添加  返回新数组长度
+    //shift   前面减少  返回减少的元素
+    //splice
+    var aa1 = [1, 2, 3]
+    var bb1 = [4, 5]
+    var cc = aa1.concat(bb1)
+    console.log(cc);
+    var aa2 = [1, 2, 3, 4, 5]
+    var bb2 = aa2.slice(0, 3)
+    var cc2 = aa2.slice()
+    console.log(aa2); //[1,2,3,4,5]
+    console.log(bb2);//[1,2,3]
+    console.log(cc2);//[1,2,3,4,5]
+    var aa3 = [0, 1, 2, 3, 4, 5]
+    var bb3 = aa3.join(',')
+    console.log(bb3);
+    var aa4 = ['a', 'b', 'd', 'c', 45, 32, 15, 6]
+    var bb4 = aa4.sort() //按ascii码排序
+    console.log(bb4);
+    var aa5 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    var bb5 = aa5.filter(a => {
+      return a === 4
+    })
+    console.log(bb5);
+    console.log(aa5);
+    var aa6 = [2, 4, 6, 8, 0]
+    var bb6 = aa6.map((ai, index, arr) => {
+      console.log('ai是' + ai);
+      console.log('index是' + index);
+      console.log('arr是' + arr);
+      return ai * 2
+
+    })
+    console.log(bb6);
+    console.log(aa6);
+    var aa7 = [1, 9, 2, 3, 6, 5, 11]
+    var bb7 = aa7.every(a => {
+      return a < 11
+    })
+    console.log(bb7);
+    var arraa = ['a', 'b', 'c']
+    var copy = []
+    arraa.forEach(function (item) {
+      console.log(item);
+      copy.push(item)
+    })
+    console.log(copy)
+    var aa9 = [1, 2, 3, 4, 1, 2, 5, 3, 6, 8, 1, 5, 2, 1, 6]
+    var bb9 = [...new Set(aa9)]
+    console.log(bb9);
+    var d = new Date().getDay();
+    console.log(d)
+    var arrarr = [5, 6, 8, 2, 4, 3, 6, 88, 55, 121, 21, 215, 41, 21, 3, 231, 5, 31, 0]
+    arrarr.sort(function (a, b) {
+      return a - b
+    })
+    console.log(arrarr);
+    var qwer = [2, 5, 3, 6, 25, 999, 11111, 333, 666666, 8888, 555, 22, 0]
+    qwer.sort(function (a, b) {
+      return b - a
+    })
+    console.log(qwer);
+
+  </script>
+</body>
+
+</html>
